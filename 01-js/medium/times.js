@@ -9,5 +9,21 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
+    // Record start time
+    const startTime = new Date().getTime();
+
+    // Your computation logic here
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+
+    // Record end time
+    const endTime = new Date().getTime();
+
+    // Calculate elapsed time in seconds
+    const elapsedTime = (endTime - startTime) / 1000;
+
+    return elapsedTime;
     return 0.01;
 }
