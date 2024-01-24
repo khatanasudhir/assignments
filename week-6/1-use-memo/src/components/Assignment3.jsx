@@ -6,13 +6,20 @@ export const Assignment3 = () => {
     const [items, setItems] = useState([
         { name: 'Chocolates', value: 10 },
         { name: 'Chips', value: 20 },
-        { name: 'Onion', value: 30 },
+        { name: 'Onion', value: 40 },
         { name: 'Tomato', value: 30 },
         // Add more items as needed
     ]);
 
     // Your code starts here
-    const totalValue = 0;
+    // reducer
+    const totalValue = useMemo(() => {
+        let total = 0;
+        for(let i=0; i < items.length ; i++){
+            total = total + items[i].value;
+        }
+        return total;
+    },[items])
     // Your code ends here
     return (
         <div>
