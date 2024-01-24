@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const {JWT_SECRET} = require("../config");
 
 // User Routes
+
 router.post('/signup', async(req, res) => {
     // Implement user signup logic
     const username = req.body.username
@@ -19,6 +20,7 @@ router.post('/signup', async(req, res) => {
         message: "User Created successfully"
     })
 });
+
 
 router.post('/signin', async (req, res) => {
     // Implement admin signup logic
@@ -46,7 +48,9 @@ router.post('/signin', async (req, res) => {
 
 });
 
+
 router.get('/courses', async (req, res) => {
+
     // Implement listing all courses logic
     // Implement listing all courses logic
     const courses = await Course.find({});
@@ -68,7 +72,10 @@ router.post('/courses/:courseId', userMiddleware, (req, res) => {
     });
 });
 
+
+
 router.get('/purchasedCourses', userMiddleware, async (req, res) => {
+
     // Implement fetching purchased courses logic
     const username = req.username;
 
